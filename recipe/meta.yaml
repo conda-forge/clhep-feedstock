@@ -12,14 +12,16 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
-  
+
 requirements:
   build:
-    - toolchain
     - cmake
-    
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+
 test:
   commands:
     - test -f ${PREFIX}/lib/libCLHEP.so  # [linux]
@@ -35,11 +37,11 @@ about:
   license_file: CLHEP/COPYING.LESSER
   summary: A Class Library for High Energy Physics
   description: |
-    It is intended to be a set of HEP specific foundation and utility classes such as 
+    It is intended to be a set of HEP specific foundation and utility classes such as
     random generators, physics vectors, geometry and linear algebra.
   doc_url: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu
   dev_url: https://gitlab.cern.ch/CLHEP/CLHEP
 
 extra:
-  recipe-maintainers:    
+  recipe-maintainers:
       - giacomov
