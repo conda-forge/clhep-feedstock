@@ -1,6 +1,6 @@
 {% set name = "clhep" %}
-{% set version = "2.4.0.2" %}
-{% set sha256 = "61664bd1974303dd89d5e6bf506780acc21fce9394e279a36a26fcbbda361e7b" %}
+{% set version = "2.4.1.0" %}
+{% set sha256 = "6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022" %}
 
 package:
   name: {{ name|lower }}
