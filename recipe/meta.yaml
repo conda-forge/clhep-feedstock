@@ -1,39 +1,38 @@
 {% set name = "clhep" %}
-{% set version = "2.4.1.0" %}
-{% set sha256 = "6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022" %}
+{% set version = "2.4.1.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/{{ name }}-{{ version }}.tgz
-  sha256: {{ sha256 }}
+  sha256: d049bf47b6a1cb5441d5be357a8c3f499ebf4ed7a5ac3d1686fed9df376494fa
 
 build:
-  number: 1001
+  number: 0
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage('clhep', max_pin='x.x.x.x') }}
 
 requirements:
   build:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make
   host:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libCLHEP.so  # [linux]
-    - test -f ${PREFIX}/lib/libCLHEP.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libCLHEP${SHLIB_EXT}
     - test -d ${PREFIX}/include/CLHEP
     - conda inspect linkages -p $PREFIX clhep  # [not win]
     - conda inspect objects -p $PREFIX clhep  # [osx]
 
 about:
   home: http://proj-clhep.web.cern.ch/proj-clhep/
-  license: LGPL-3.0
-  license_family: GPL
+  license: LGPL-3.0-only
   license_file: CLHEP/COPYING.LESSER
   summary: A Class Library for High Energy Physics
   description: |
@@ -47,3 +46,4 @@ extra:
       - giacomov
       - jasercion
       - Areustle
+      - chrisburr
