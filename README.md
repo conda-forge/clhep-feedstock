@@ -5,9 +5,13 @@ Home: http://proj-clhep.web.cern.ch/proj-clhep/
 
 Package license: LGPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/clhep-feedstock/blob/master/LICENSE.txt)
 
 Summary: A Class Library for High Energy Physics
+
+Development: https://gitlab.cern.ch/CLHEP/CLHEP
+
+Documentation: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu
 
 It is intended to be a set of HEP specific foundation and utility classes such as
 random generators, physics vectors, geometry and linear algebra.
