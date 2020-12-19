@@ -7,7 +7,7 @@ package:
 
 source:
   url: http://proj-clhep.web.cern.ch/proj-clhep/dist1/{{ name }}-{{ version }}.tgz
-  sha256: f74eda4e168302364ca882167ba1664b059c11e77b65aff3c7c7f61aa4aed166
+  sha256: 5df78c11733a091da9ae5a24ce31161d44034dd45f20455587db85f1ca1ba539
 
 build:
   number: 0
