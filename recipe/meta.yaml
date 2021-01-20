@@ -1,5 +1,5 @@
 {% set name = "clhep" %}
-{% set version = "2.4.4.0" %}
+{% set version = "2.4.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: http://proj-clhep.web.cern.ch/proj-clhep/dist1/{{ name }}-{{ version }}.tgz
-  sha256: 5df78c11733a091da9ae5a24ce31161d44034dd45f20455587db85f1ca1ba539
+  sha256: 4b73da8414ab1eea67d0236c930c318ca90e6e0b27049bcb8899893bfb3efc21
 
 build:
   number: 0
@@ -26,8 +26,6 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libCLHEP${SHLIB_EXT}
     - test -d ${PREFIX}/include/CLHEP
-    - conda inspect linkages -p $PREFIX clhep  # [not win]
-    - conda inspect objects -p $PREFIX clhep  # [osx]
 
 about:
   home: http://proj-clhep.web.cern.ch/proj-clhep/
