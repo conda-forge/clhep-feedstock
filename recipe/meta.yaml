@@ -1,5 +1,5 @@
 {% set name = "clhep" %}
-{% set version = "2.4.5.3" %}
+{% set version = "2.4.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: http://proj-clhep.web.cern.ch/proj-clhep/dist1/{{ name }}-{{ version }}.tgz
-  sha256: 45f63eeb097f02fe67b86a7dadbf10d409b401c28a1a3e172db36252c3097c13
+  sha256: 983fb4ea1fe423217fe9debc709569495a62a3b4540eb790d557c5a34dffbbb6
 
 build:
   number: 0
