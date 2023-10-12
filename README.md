@@ -1,11 +1,11 @@
-About clhep
-===========
+About clhep-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/clhep-feedstock/blob/main/LICENSE.txt)
 
 Home: http://proj-clhep.web.cern.ch/proj-clhep/
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/clhep-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Class Library for High Energy Physics
 
