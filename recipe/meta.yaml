@@ -3,7 +3,7 @@ package:
   version: 2.4.7.2
 
 source:
-  url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_2_4_7_2/CLHEP-CLHEP_2_4_7_2.tar.gz
+  url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_{{ version.replace(".", "_") }}/CLHEP-CLHEP_{{ version.replace(".", "_") }}.tar.gz
   sha256: c40c239fa2c5810b60f4e9ddd6a8cc2ce81b962aa170994748cd2a2b5ac87f84
   folder: CLHEP
 
