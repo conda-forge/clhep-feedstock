@@ -1,6 +1,8 @@
+{% set version = "2.4.7.2" %}
+
 package:
   name: clhep
-  version: 2.4.7.2
+  version: {{ version }}
 
 source:
   url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_{{ version.replace(".", "_") }}/CLHEP-CLHEP_{{ version.replace(".", "_") }}.tar.gz
