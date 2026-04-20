@@ -1,13 +1,13 @@
-{% set name = "clhep" %}
-{% set version = "2.4.7.1" %}
+{% set version = "2.4.7.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: clhep
   version: {{ version }}
 
 source:
-  url: http://proj-clhep.web.cern.ch/proj-clhep/dist1/{{ name }}-{{ version }}.tgz
-  sha256: 1c8304a7772ac6b99195f1300378c6e3ddf4ad07c85d64a04505652abb8a55f9
+  url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_{{ version.replace(".", "_") }}/CLHEP-CLHEP_{{ version.replace(".", "_") }}.tar.gz
+  sha256: c40c239fa2c5810b60f4e9ddd6a8cc2ce81b962aa170994748cd2a2b5ac87f84
+  folder: CLHEP
 
 build:
   number: 0
@@ -20,8 +20,8 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - make
-
 test:
   commands:
     - test -f ${PREFIX}/lib/libCLHEP${SHLIB_EXT}
@@ -44,3 +44,4 @@ extra:
     - jasercion
     - Areustle
     - chrisburr
+    - tkittel
