@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  tag_version: "2_4_7_2"
+
+package:
+  name: clhep
+  version: ${{ tag_version | replace('_', '.') }}
+
+source:
+  url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_${{ tag_version }}/CLHEP-CLHEP_${{ tag_version }}.tar.gz
+  sha256: c40c239fa2c5810b60f4e9ddd6a8cc2ce81b962aa170994748cd2a2b5ac87f84
+  target_directory: CLHEP
+
+build:
+  number: 0
+  skip: win
+
+requirements:
+  build:
+    - cmake
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - make
+  run_exports:
+    - ${{ pin_subpackage('clhep', upper_bound='x.x.x.x') }}
+
+tests:
+  - script:
+      - test -f ${PREFIX}/lib/libCLHEP${SHLIB_EXT}
+      - test -d ${PREFIX}/include/CLHEP
+
+about:
+  license: LGPL-3.0-only
+  license_file: CLHEP/COPYING.LESSER
+  summary: A Class Library for High Energy Physics
+  description: |
+    It is intended to be a set of HEP specific foundation and utility classes such as
+    random generators, physics vectors, geometry and linear algebra.
+  homepage: http://proj-clhep.web.cern.ch/proj-clhep/
+  repository: https://gitlab.cern.ch/CLHEP/CLHEP
+  documentation: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu
+
+extra:
+  recipe-maintainers:
+    - giacomov
+    - jasercion
+    - Areustle
+    - chrisburr
+    - tkittel
