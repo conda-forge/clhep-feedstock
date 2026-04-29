@@ -16,7 +16,6 @@ Documentation: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu
 It is intended to be a set of HEP specific foundation and utility classes such as
 random generators, physics vectors, geometry and linear algebra.
 
-
 Current build status
 ====================
 
@@ -46,13 +45,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=156&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clhep-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=156&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/clhep-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -202,4 +194,5 @@ Feedstock Maintainers
 * [@chrisburr](https://github.com/chrisburr/)
 * [@giacomov](https://github.com/giacomov/)
 * [@jasercion](https://github.com/jasercion/)
+* [@tkittel](https://github.com/tkittel/)
 
