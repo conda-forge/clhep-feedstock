@@ -1,5 +1,9 @@
 bot:
   automerge: true
+  # Geant4 10.7 requires CLHEP 2.4.4.0 and pins its consumers to it exactly, so
+  # that release line has to keep receiving global pinning migrations.
+  abi_migration_branches:
+    - v2.4.4.0
 build_platform:
   linux_aarch64: linux_aarch64
   osx_arm64: osx_arm64
