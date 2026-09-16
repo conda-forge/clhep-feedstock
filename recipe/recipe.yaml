@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  tag_version: "2_4_7_2"
+  tag_version: "2_4_4_0"
   version: ${{ tag_version | replace('_', '.') }}
 
 package:
@@ -10,11 +10,19 @@ package:
 
 source:
   url: https://gitlab.cern.ch/CLHEP/CLHEP/-/archive/CLHEP_${{ tag_version }}/CLHEP-CLHEP_${{ tag_version }}.tar.gz
-  sha256: c40c239fa2c5810b60f4e9ddd6a8cc2ce81b962aa170994748cd2a2b5ac87f84
+  sha256: b9d9364fe0f3fbc03e0f0cf53b81e8190dae38f81cc854b6b712e1b85d472752
   target_directory: CLHEP
+  patches:
+    # CMake 4 rejects cmake_minimum_required(VERSION 3.2). Upstream moved to the
+    # <min>...<max> range form in 2.4.5.2; 2.4.4.0 predates that and will not be
+    # released again.
+    - patches/0001-accept-cmake-policies-up-to-3.24.patch
+    # myID_t is std::uint32_t but <cstdint> was never included; GCC 15 no
+    # longer provides it transitively. Upstream added the include in 2.4.6.1.
+    - patches/0002-include-cstdint-in-mixmaxrng.patch
 
 build:
-  number: 2
+  number: 1
   skip: win
   dynamic_linking:
     overlinking_behavior: error

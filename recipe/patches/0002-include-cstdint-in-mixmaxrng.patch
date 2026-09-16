@@ -1,0 +1,28 @@
+From eb17e9d8d5f7c3e15b8408db444e107e00bb9d59 Mon Sep 17 00:00:00 2001
+From: Chris Burr <chrisburr73@gmail.com>
+Date: Wed, 16 Sep 2026 11:22:20 +0200
+Subject: [PATCH] Include <cstdint> in MixMaxRng.h
+
+myID_t is an alias for std::uint32_t but nothing here includes <cstdint>.
+Older libstdc++ pulled it in transitively via <array>; GCC 15 does not, so
+the header fails to compile with 'myID_t was not declared in this scope'.
+
+Upstream added this include in CLHEP 2.4.6.1 ("Random: add the cstdint
+header where uint32_t and uint64_t are used"). 2.4.4.0 predates that and
+will not be released again.
+---
+ Random/Random/MixMaxRng.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Random/Random/MixMaxRng.h b/Random/Random/MixMaxRng.h
+index 867669f..66e4b04 100644
+--- a/Random/Random/MixMaxRng.h
++++ b/Random/Random/MixMaxRng.h
+@@ -34,6 +34,7 @@
+ #define MixMaxRng_h 1
+ 
+ #include <array>
++#include <cstdint>
+ #include "CLHEP/Random/defs.h"
+ #include "CLHEP/Random/RandomEngine.h"
+ 
